@@ -1,6 +1,9 @@
 @import "_animation.scss";
 // blue green black yellow orange: https://coolors.co/246eb9-4cb944-2d2a32-ddd92a-ffba08
 
+$animationDuration: 1s;
+$animationDelay: .5s;
+
 *,
 *::before,
 *::after {
@@ -20,12 +23,46 @@ html {
     }
 }
 
+body {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 h1 {
     font-weight: 700;
 }
 
 h3 {
     font-weight: 300;
+}
+
+nav {
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+
+    opacity: 0;
+    animation-name: appearAnimation;
+    animation-duration: $animationDuration;
+    animation-fill-mode: forwards;
+    animation-delay: 4 * $animationDelay;
+
+    h3 {
+        color: #2D2A32;
+        border: none;
+        background: transparent;
+        margin-right: 10px;
+        font-size: 1rem;
+        font-weight: 200;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 2px #C3CAD1;
+
+        &:hover {
+            background-color: #C3CAD1;
+        }
+    }
 }
 
 .start-container {
@@ -39,8 +76,6 @@ h3 {
     color: #2D2A32;
 
     .start-wrapper {
-        $animationDuration: 1s;
-
         display: grid;
         grid-template-rows: auto auto;
         grid-template-columns: auto auto;
@@ -66,7 +101,7 @@ h3 {
         .description{
             opacity: 0;
             animation-name: appearAnimation;
-            animation-delay: 2s;
+            animation-delay: 2 * $animationDelay;
             animation-duration: $animationDuration;
             animation-fill-mode: forwards;
         }
@@ -74,7 +109,7 @@ h3 {
         .links-container {
             opacity: 0;
             animation-name: appearAnimation;
-            animation-delay: 3s;
+            animation-delay: 3 * $animationDelay;
             animation-duration: $animationDuration;
             animation-fill-mode: forwards;
 
@@ -95,7 +130,7 @@ h3 {
         .last-name{
             opacity: 0;
             animation-name: appearAnimation;
-            animation-delay: 1s;
+            animation-delay: $animationDelay;
             animation-duration: $animationDuration;
             animation-fill-mode: forwards;
         }
