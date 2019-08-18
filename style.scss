@@ -4,8 +4,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Roboto";
+    font-family: "Roboto", serif;
     font-style: normal;
+}
+
+html {
+    font-size: 2vw;
+
+
+    @media screen and (max-width: 600px){
+        font-size: 3vw;
+    }
 }
 
 h1 {
@@ -51,17 +60,13 @@ h3 {
             justify-content: center;
 
             a {
-                margin-left: 1.5em;
+                margin-left: 1.5rem;
             }
 
             img {
-                width: 2.5em;
-                height: 2.5em;
+                width: 2.5rem;
+                height: 2.5rem;
             }
         }
     }
-
-
-
-
 }
