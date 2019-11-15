@@ -1,138 +1,74 @@
 @import "_animation.scss";
 // blue green black yellow orange: https://coolors.co/246eb9-4cb944-2d2a32-ddd92a-ffba08
 
-$animationDuration: 1s;
-$animationDelay: .5s;
-
 *,
 *::before,
 *::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Roboto", serif;
+    font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
     font-style: normal;
 }
 
-html {
-    font-size: 2vw;
-    background-color: #EEF0F2;
-
-    @media screen and (max-width: 600px){
-        font-size: 3vw;
-    }
-}
-
 body {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-h1 {
-    font-weight: 700;
-}
-
-h3 {
-    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3em;
+    margin-right: 3em;
+    height: 100vh;
+    background: #F2F2F2;
 }
 
 nav {
-    width: 100vw;
-
     display: flex;
     justify-content: center;
+    margin-top: 5px;
 
-    opacity: 0;
-    animation-name: appearAnimation;
-    animation-duration: $animationDuration;
-    animation-fill-mode: forwards;
-    animation-delay: 4 * $animationDelay;
-
-    h3 {
-        color: #2D2A32;
-        border: none;
-        background: transparent;
-        margin-right: 10px;
-        font-size: 1rem;
-        font-weight: 200;
+    a {
+        font-size: 2em;
+        margin-left: .5em;
         cursor: pointer;
-        border-radius: 5px;
-        box-shadow: 0 2px #C3CAD1;
-
-        &:hover {
-            background-color: #C3CAD1;
-        }
+        font-weight: lighter;
     }
 }
 
-.start-container {
-    height: 100vh;
-    width: 100vw;
+main {
+    flex-grow: 2;
+}
 
+h1 {
+    font-weight: bolder;
+}
+
+h3 {
+    font-weight: lighter;
+}
+
+.home_page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    color: #2D2A32;
+    a {
+        text-decoration: none;
+    }
 
-    .start-wrapper {
-        display: grid;
-        grid-template-rows: auto auto;
-        grid-template-columns: auto auto;
+    img {
+        width: 3em;
+        height: 3em;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
 
-        h1 {
-            font-size: 6rem;
-            margin: 5px;
-        }
+    h1 {
+        font-size: 9em;
+        text-align: center;
+    }
 
-        h2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .first-name{
-            opacity: 0;
-            animation-name: appearAnimation;
-            animation-duration: $animationDuration;
-            animation-fill-mode: forwards;
-        }
-
-        .description{
-            opacity: 0;
-            animation-name: appearAnimation;
-            animation-delay: 2 * $animationDelay;
-            animation-duration: $animationDuration;
-            animation-fill-mode: forwards;
-        }
-
-        .links-container {
-            opacity: 0;
-            animation-name: appearAnimation;
-            animation-delay: 3 * $animationDelay;
-            animation-duration: $animationDuration;
-            animation-fill-mode: forwards;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            a {
-                margin-left: 1.5rem;
-            }
-
-            img {
-                width: 2.5rem;
-                height: 2.5rem;
-            }
-        }
-
-        .last-name{
-            opacity: 0;
-            animation-name: appearAnimation;
-            animation-delay: $animationDelay;
-            animation-duration: $animationDuration;
-            animation-fill-mode: forwards;
-        }
+    h3 {
+        font-size: 5em;
+        text-align: center;
     }
 }
