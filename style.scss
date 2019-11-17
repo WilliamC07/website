@@ -7,68 +7,86 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    font-family: "Roboto";
     font-style: normal;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    margin-left: 3em;
-    margin-right: 3em;
-    height: 100vh;
-    background: #F2F2F2;
+html {
+    margin: 10px 10px 10px 10px;
+    background: #F1F0F0;
 }
 
 nav {
     display: flex;
-    justify-content: center;
-    margin-top: 5px;
-
+    justify-content: flex-end;
+    position: sticky;
     a {
-        font-size: 2em;
-        margin-left: .5em;
-        cursor: pointer;
-        font-weight: lighter;
-    }
-}
+        margin-right: 10px;
+        text-decoration: none;
 
-main {
-    flex-grow: 2;
+        &:visited {
+            color: black;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 h1 {
-    font-weight: bolder;
+    font-weight: 900;
+    @media only screen and (min-width: 768px) {
+        font-size: 6vw;
+    }
+    @media only screen and (max-width: 360px) {
+        // iphone 5/SE
+        font-size: 8vw;
+    }
+    @media only screen and (max-width: 768px) and (orientation: portrait) {
+        font-size: 8vw;
+    }
+}
+
+h2 {
+    font-weight: 400;
+    text-align: center;
+    border-bottom: 1px solid black;
+    line-height: .1em;
+    margin: 10px 0 20px;
+    background: #F1F0F0;
+
+    span {
+        background: #F1F0F0;
+        padding: 0 10px;
+    }
 }
 
 h3 {
-    font-weight: lighter;
+    font-weight: 400;
 }
 
-.home_page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    a {
-        text-decoration: none;
+h4 {
+    font-weight: 300;
+    @media only screen and (max-width: 360px) {
+        // iphone 5/SE
+        font-size: 5vw;
     }
+}
 
-    img {
-        width: 3em;
-        height: 3em;
-        margin-left: 1.5em;
-        margin-right: 1.5em;
-    }
+p {
+    font-weight: 100;
+    margin-right: 10px;
+    margin-left: 10px;
+}
 
-    h1 {
-        font-size: 9em;
-        text-align: center;
-    }
+section {
+    margin-top: 20px
+}
 
-    h3 {
-        font-size: 5em;
-        text-align: center;
+.title {
+    h1, h4 {
+        display: inline;
+        margin-right: 5px;
     }
 }
