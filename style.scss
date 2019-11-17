@@ -12,7 +12,7 @@
 }
 
 html {
-    margin: 10px 10px 10px 10px;
+    margin: 0 10px 10px 10px;
     background: #F1F0F0;
 }
 
@@ -20,11 +20,16 @@ nav {
     display: flex;
     justify-content: flex-end;
     position: sticky;
+    background: #F1F0F0;
+    padding: 5px 0;
+    height: 7vh;
+    align-items: center;
+    top: 0;
     a {
         margin-right: 10px;
         text-decoration: none;
 
-        &:visited {
+        &:visited, &:link {
             color: black;
         }
 
@@ -81,7 +86,7 @@ p {
 }
 
 section {
-    margin-top: 20px
+    padding-top: 7vh; //compensate for nav and clear division of sections
 }
 
 .title {
