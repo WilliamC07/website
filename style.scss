@@ -12,86 +12,90 @@
 }
 
 html {
-    margin: 0 10px 10px 10px;
     background: #F1F0F0;
 }
 
-nav {
-    display: flex;
-    justify-content: flex-end;
-    position: sticky;
-    background: #F1F0F0;
-    padding: 5px 0;
-    height: 7vh;
-    align-items: center;
-    top: 0;
-    a {
-        margin-right: 10px;
-        text-decoration: none;
+body {
+    $margin-side: 17%;
+    margin-left: $margin-side;
+    margin-right: $margin-side;
+    width: 100% - 2 * $margin-side;
 
-        &:visited, &:link {
-            color: black;
-        }
+    margin-top: 10px;
+}
+
+#title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    border-bottom: black solid 2px;
+
+    h1 {
+        font-size: 5em;
+        flex-grow: 2;
+    }
+
+    a {
+        $dimension: 2.5em;
+        width: $dimension;
+        height: $dimension;
+        margin-right: 10px;
 
         &:hover {
-            text-decoration: underline;
+            width: $dimension * 1.5;
+            height: $dimension * 1.5;
         }
     }
 }
 
-h1 {
-    font-weight: 900;
-    @media only screen and (min-width: 768px) {
-        font-size: 6vw;
-    }
-    @media only screen and (max-width: 360px) {
-        // iphone 5/SE
-        font-size: 8vw;
-    }
-    @media only screen and (max-width: 768px) and (orientation: portrait) {
-        font-size: 8vw;
-    }
-}
+.container {
+    margin-top: 1.5em;
+    margin-left: 1.5em;
 
-h2 {
-    font-weight: 400;
-    text-align: center;
-    border-bottom: 1px solid black;
-    line-height: .1em;
-    margin: 10px 0 20px;
-    background: #F1F0F0;
+    h2 {
+        border-bottom: gray solid 1px;
+    }
 
-    span {
-        background: #F1F0F0;
-        padding: 0 10px;
+    h3 {
+        margin-top: 1em;
+    }
+
+
+    p {
+        text-indent: 50px;
+        margin-top: .5em;
+        font-size: 1.1em;
+        font-weight: 300;
     }
 }
 
-h3 {
-    font-weight: 400;
+.education {
+
 }
 
-h4 {
-    font-weight: 300;
-    @media only screen and (max-width: 360px) {
-        // iphone 5/SE
-        font-size: 5vw;
+.group{
+    margin-top: 6px;
+
+    .group-top {
+        display: flex;
+
+        .group-name {
+            flex-grow: 2;
+        }
+
+        .group-date {
+            font-weight: 300;
+        }
     }
-}
 
-p {
-    font-weight: 100;
-    margin-right: 10px;
-    margin-left: 10px;
-}
+    .role {
+        font-weight: 300;
+    }
 
-section {
-    padding-top: 7vh; //compensate for nav and clear division of sections
-}
-
-.title {
-    h1, h4 {
-        display: inline;
-        margin-right: 5px;
+    ul {
+        font-weight: 300;
+        margin-top: 5px;
+        margin-left: 1.5em;
+        list-style-type: none;
     }
 }
