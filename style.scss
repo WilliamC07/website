@@ -24,6 +24,16 @@ body {
     margin-top: 10px;
 }
 
+h2 {
+    border-bottom: gray solid 1px;
+    font-size: 2em;
+}
+
+h3 {
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+
 #title-container {
     display: flex;
     flex-direction: row;
@@ -52,15 +62,6 @@ body {
     margin-top: 1.5em;
     margin-left: 1.5em;
 
-    h2 {
-        border-bottom: gray solid 1px;
-    }
-
-    h3 {
-        margin-top: 1em;
-    }
-
-
     p {
         text-indent: 50px;
         margin-top: .5em;
@@ -81,6 +82,7 @@ body {
 
         .group-name {
             flex-grow: 2;
+            font-weight: 600;
         }
 
         .group-date {
