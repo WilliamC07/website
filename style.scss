@@ -11,12 +11,58 @@
     font-style: normal;
 }
 
+/** Media queries **/
+@mixin media($type) {
+    @if $type == "phone" {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $type == "phone-landscape" {
+        @media only screen and (min-device-width: 480px) and (max-device-width: 640px) and (orientation: landscape) {
+            @content;
+        }
+        @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+            // iPhone 6, 6S, 7 and 8
+            @content;
+        }
+        @media only screen
+        and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+            // iPhone 6+, 7+ and 8+
+            @content;
+        }
+        @media only screen
+        and (min-device-width: 375px)
+        and (max-device-width: 812px)
+        and (-webkit-min-device-pixel-ratio: 3)
+        and (orientation: landscape) {
+            // iPhone X
+            @content;
+        }
+    }
+    @else if $type == "large" {
+        // tablets and desktop
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    }
+}
+
 html {
     background: #F1F0F0;
 }
 
 body {
+    // default for tablet and desktop
     $margin-side: 17%;
+
+    @include media("phone-landscape"){
+        $margin-side: 2%;
+    }
+    @include media("phone") {
+        // portrait phones
+        $margin-side: 2%;
+    }
     margin-left: $margin-side;
     margin-right: $margin-side;
     width: 100% - 2 * $margin-side;
@@ -43,24 +89,45 @@ h3 {
     h1 {
         font-size: 5em;
         flex-grow: 2;
-    }
+        @include media("phone") {
+            text-align: center;
+        }
 
-    a {
-        $dimension: 2.5em;
-        width: $dimension;
-        height: $dimension;
-        margin-right: 10px;
+        a {
+            margin-right: 5px;
+            margin-left: 5px;
+            @include media("large") {
+                float: right;
+            }
 
-        &:hover {
-            width: $dimension * 1.5;
-            height: $dimension * 1.5;
+            img {
+                $dimension: .5em;
+                width: $dimension;
+                height: $dimension;
+
+                &:first-child {
+                    margin-left: 2px;
+                }
+
+                &:hover {
+                    width: $dimension * 1.5;
+                    height: $dimension * 1.5;
+                }
+            }
         }
     }
 }
 
 .container {
     margin-top: 1.5em;
-    margin-left: 1.5em;
+    @include media("large"){
+        margin-left: 1.5em;
+    }
+
+    @include media("phone") {
+        // phones
+        margin-left: 2%;
+    }
 
     p {
         text-indent: 50px;
@@ -78,7 +145,15 @@ h3 {
     margin-top: 6px;
 
     .group-top {
-        display: flex;
+        @include media("large") {
+            display: flex;
+        }
+        @include media("phone") {
+            display: block;
+        }
+        @include media("phone-landscape") {
+            display: flex;
+        }
 
         .group-name {
             font-weight: 600;
@@ -87,6 +162,17 @@ h3 {
         .group-location {
             flex-grow: 2;
             font-weight: 300;
+            // add comma before
+            @include media("large") {
+                &::before {
+                    content: ', ';
+                }
+            }
+            @include media("phone-landscape"){
+                &::before {
+                    content: ', ';
+                }
+            }
         }
 
         .group-date {
