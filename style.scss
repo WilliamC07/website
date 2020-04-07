@@ -53,19 +53,25 @@ html {
 }
 
 body {
-    // default for tablet and desktop
-    $margin-side: 17%;
-
     @include media("phone-landscape"){
         $margin-side: 2%;
+        margin-left: $margin-side;
+        margin-right: $margin-side;
+        width: 100% - 2 * $margin-side;
     }
     @include media("phone") {
         // portrait phones
         $margin-side: 2%;
+        margin-left: $margin-side;
+        margin-right: $margin-side;
+        width: 100% - 2 * $margin-side;
     }
-    margin-left: $margin-side;
-    margin-right: $margin-side;
-    width: 100% - 2 * $margin-side;
+    @include media("large") {
+        $margin-side: 17%;
+        margin-left: $margin-side;
+        margin-right: $margin-side;
+        width: 100% - 2 * $margin-side;
+    }
 
     margin-top: 10px;
 }
