@@ -81,8 +81,12 @@ h3 {
         display: flex;
 
         .group-name {
-            flex-grow: 2;
             font-weight: 600;
+        }
+
+        .group-location {
+            flex-grow: 2;
+            font-weight: 300;
         }
 
         .group-date {
